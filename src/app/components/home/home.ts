@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './home.scss',
 })
 export class Home {
+  valorBooleano = true;
+
+  alteraBooleano = (valor: boolean) => {
+    this.valorBooleano = valor
+  }
 
 }
