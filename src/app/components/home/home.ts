@@ -7,10 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './home.scss',
 })
 export class Home {
-  valorBooleano = true;
+  nome = "gabriel"
+  id = "1"
 
-  alteraBooleano = (valor: boolean) => {
-    this.valorBooleano = valor
+  submit(evento: any) {
+    console.log("Olá, Mundo", evento)
   }
-
 }
