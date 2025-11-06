@@ -7,8 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './home.scss',
 })
 export class Home {
-  nome = "gabriel"
+  nome = "Gabriel"
   id = "1"
+  deveMostrarTitulo = false
+  listItens = ['Banana', 'Maça']
 
   submit(evento: any) {
     console.log("Olá, Mundo", evento)

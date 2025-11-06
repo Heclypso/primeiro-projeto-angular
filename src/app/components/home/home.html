@@ -1,3 +1,15 @@
 <p>Olá, Mundo</p>
 <h2 [attr.aria-label]="nome"></h2>
 <button (click)="submit($event)" [id]="id">Clique aqui</button>
+
+@if(deveMostrarTitulo) {
+  <h1>Meu titulo</h1>
+} @else if (nome == 'Gabriel') {
+  <h1>{{nome}}</h1>
+} @else {
+    <h1>Não foi verdadeiro</h1>
+}
+
+@for (item of listItens; track item) {
+  <p>{{ item }}</p>
+}
