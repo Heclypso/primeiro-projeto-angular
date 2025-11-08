@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+
+import { EnviaFormulario } from '../../services/envia-formulario';
 
 @Component({
   selector: 'app-home',
@@ -7,12 +9,14 @@ import { Component } from '@angular/core';
   styleUrl: './home.scss',
 })
 export class Home {
+  private enviaFormularioService = inject(EnviaFormulario)
   nome = "Gabriel"
   id = "1"
   deveMostrarTitulo = false
   listItens = ['Banana', 'Maça']
 
-  submit(evento: any) {
-    console.log("Olá, Mundo", evento)
+
+  submit(){
+    this.enviaFormularioService.enviaInformaçãoParaBackend("enviando informacao para o backend")
   }
 }
