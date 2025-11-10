@@ -1,6 +1,4 @@
-import { Component, inject } from '@angular/core';
-
-import { EnviaFormulario } from '../../services/envia-formulario';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -9,14 +7,13 @@ import { EnviaFormulario } from '../../services/envia-formulario';
   styleUrl: './home.scss',
 })
 export class Home {
-  private enviaFormularioService = inject(EnviaFormulario)
-  nome = "Gabriel"
-  id = "1"
-  deveMostrarTitulo = false
-  listItens = ['Banana', 'Maça']
+  name = 'Gabriel'
 
+  @Input("saudacao") minhaPropsDeFora!: string
 
-  submit(){
-    this.enviaFormularioService.enviaInformaçãoParaBackend("enviando informacao para o backend")
+  @Output() emitindoValorName = new EventEmitter<string>()
+
+  submit() {
+    this.emitindoValorName.emit(this.name)
   }
 }
