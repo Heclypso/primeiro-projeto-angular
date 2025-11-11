@@ -1,0 +1,22 @@
+.nav {
+  background-color: red;
+  width: 100%;
+  height: 50px;
+  padding: 16px;
+
+  display: flex;
+  align-items: center;
+
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    padding-right: 16px;
+  }
+
+  &__link {
+    background-color: green;
+  }
+}
